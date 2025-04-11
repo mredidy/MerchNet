@@ -43,9 +43,7 @@ MerchNet is an easy-to-use, decentralized Web3 analytics tool designed to help l
 ---
 
 ## 📽 Demo Video
-
-👉 [Watch the Demo Video Here](#)  
-The demo video will guide you through setting up, running the tool, and analyzing the insights provided by MerchNet.
+👉 [Watch the Demo Video Here](https://youtube.com/yourlink)
 
 ---
 
