@@ -42,9 +42,9 @@ git clone https://github.com/mredidy/merchnet.git
 
 ---
 
-## 📼 Demo Video 🎥
+## 📼 Demo Video
 
-Watch a short walkthrough here:
+Watch a short walkthrough here: [Demo Video](https://your-video-link.com) 🎥✨📊
 
 ---
 
