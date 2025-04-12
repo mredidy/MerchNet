@@ -47,3 +47,19 @@ MerchNet uses Etherscan and Google Cloud's Blockchain Node Engine APIs to delive
 ### 2. Install Dependencies
 
 Ensure you have Python 3.x installed, then install the required dependencies:
+
+### 1. Clone the Repository
+
+    git clone https://github.com/mredidy/MerchNet.git
+    cd MerchNet
+
+### 2. Install Dependencies
+
+Ensure you have Python 3.x installed, then install the required dependencies:
+    pip install -r requirements.txt
+
+### 3. Set Up Google Sheets API
+
+- Create a project in Google Cloud Console.
+- Enable Google Sheets API and download your `credentials.json` file.
+- Replace `SERVICE_ACCOUNT_FILE` in the `config.py` with the path to your credentials file.
