@@ -41,9 +41,9 @@ MerchNet uses Etherscan and Google Cloud's Blockchain Node Engine APIs to delive
 
 ### 1. Clone the Repository
 
-```bash
     git clone https://github.com/mredidy/MerchNet.git
     cd MerchNet
 
 ### 2. Install Dependencies
+
 Ensure you have Python 3.x installed, then install the required dependencies:
