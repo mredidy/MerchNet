@@ -72,8 +72,8 @@ Replace `ETHERSCAN_API_KEY` in the `config.py` with your API key.
 ### 5. Run the Application
 
 Execute the script to start fetching and logging PYUSD transactions:
-```bash
-python merchnet.py
+    
+    python merchnet.py
 
 This will fetch the latest transactions and log them into the specified Google Sheet.
 
