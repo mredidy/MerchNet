@@ -63,3 +63,14 @@ Ensure you have Python 3.x installed, then install the required dependencies:
 - Create a project in Google Cloud Console.
 - Enable Google Sheets API and download your `credentials.json` file.
 - Replace `SERVICE_ACCOUNT_FILE` in the `config.py` with the path to your credentials file.
+
+### 4. Set Up Etherscan API Key
+
+Sign up for an Etherscan account and obtain your API key.
+Replace `ETHERSCAN_API_KEY` in the `config.py` with your API key.
+
+### 5. Run the Application
+
+Execute the script to start fetching and logging PYUSD transactions:
+
+python merchnet.py
