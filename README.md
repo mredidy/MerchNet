@@ -11,7 +11,7 @@ As crypto adoption grows, local merchants face challenges in tracking and interp
 - Insights into regional transaction flows (opt-in)
 - Automatic logging and analysis in Google Sheets
 
-## 🧩 Project Overview
+## 🮩 Project Overview
 
 MerchNet uses Etherscan and Google Cloud's Blockchain Node Engine APIs to deliver valuable insights, including:
 
@@ -41,54 +41,52 @@ MerchNet uses Etherscan and Google Cloud's Blockchain Node Engine APIs to delive
 
 ### 1. Clone the Repository
 
-    git clone https://github.com/mredidy/MerchNet.git
-    cd MerchNet
+```bash
+git clone https://github.com/mredidy/MerchNet.git
+cd MerchNet
+```
 
 ### 2. Install Dependencies
 
 Ensure you have Python 3.x installed, then install the required dependencies:
 
-### 1. Clone the Repository
-
-    git clone https://github.com/mredidy/MerchNet.git
-    cd MerchNet
-
-### 2. Install Dependencies
-
-Ensure you have Python 3.x installed, then install the required dependencies:
-    pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
 ### 3. Set Up Google Sheets API
 
-- Create a project in Google Cloud Console.
-- Enable Google Sheets API and download your `credentials.json` file.
-- Replace `SERVICE_ACCOUNT_FILE` in the `config.py` with the path to your credentials file.
+- Create a project in [Google Cloud Console](https://console.cloud.google.com/)
+- Enable Google Sheets API and download your `credentials.json` file
+- Replace `SERVICE_ACCOUNT_FILE` in the `config.py` with the path to your credentials file
 
 ### 4. Set Up Etherscan API Key
 
-Sign up for an Etherscan account and obtain your API key.
-Replace `ETHERSCAN_API_KEY` in the `config.py` with your API key.
+- Sign up for an [Etherscan account](https://etherscan.io/register) and obtain your API key
+- Replace `ETHERSCAN_API_KEY` in the `config.py` with your API key
 
 ### 5. Run the Application
 
 Execute the script to start fetching and logging PYUSD transactions:
-    
-    python merchnet.py
+
+```bash
+python merchnet.py
+```
 
 This will fetch the latest transactions and log them into the specified Google Sheet.
 
- **📜 License**
+## 📜 License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/mredidy/MerchNet/blob/main/LICENSE) file for more details.
 
- **🤝 Contributing**
+## 🤝 Contributing
 
 Feel free to open issues and submit pull requests to contribute to the development of MerchNet!
 
- **📞 Contact**
+## 📞 Contact
 
-**GitHub**: [mredidy](https://github.com/mredidy)
-**Twitter**: [@mister_edidy](https://twitter.com/mister_edidy)
-**Discord**: mredidy
+- **GitHub**: [mredidy](https://github.com/mredidy)
+- **Twitter**: [@mister_edidy](https://twitter.com/mister_edidy)
+- **Discord**: mredidy
 
 Made with ❤️ for local businesses to make crypto payments easy and understandable.
