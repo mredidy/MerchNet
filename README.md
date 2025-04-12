@@ -1,77 +1,66 @@
-# 📋 MerchNet – Crypto Payment Insights for Local Businesses
+# MerchNet ✨
 
-MerchNet is a lightweight tool that helps local businesses make sense of cryptocurrency payment activity in their area — starting with **PYUSD** transactions. By tapping into public blockchain APIs and visualizing data through Google Sheets, MerchNet gives businesses actionable insights about where, when, and how crypto is being used.
-
----
-
-## 🔍 What Problem Does MerchNet Solve?
-
-Cryptocurrency adoption is growing fast, but local merchants often struggle with:
-- **Understanding real demand** in their region
-- **Tracking crypto transaction trends**
-- **Making informed decisions** about accepting stablecoins like PYUSD
-
-MerchNet solves this by turning blockchain data into easy-to-read tables, helping merchants:
-- See recent PYUSD transactions nearby
-- Identify hotspots of crypto usage
-- Analyze volume, time patterns, and wallet behavior
+MerchNet is a crypto payments insights tool designed specifically for local businesses. It tracks and analyzes real-time PYUSD transactions using public APIs, turning blockchain activity into actionable intelligence. MerchNet makes it easy for merchants and business owners to understand how digital payments flow within their local areas and helps them make informed business decisions based on data. 📈🛒🌍
 
 ---
 
-## 🚀 How It Works
+## 🌟 Why MerchNet? 💡
 
-1. MerchNet fetches **on-chain data** using the [Blockscout API](https://blockscout.com/) for Ethereum-compatible chains.
-2. Transactions are filtered by:
-   - Stablecoin: PYUSD
-   - Geo relevance (e.g., US-based or filtered by known wallets)
-3. The results are automatically exported to **Google Sheets**, which allows easy sharing, filtering, and analysis.
-
----
-
-## 🎥 Demo Video
-
-📻 **[Watch the demo](#)**  
-*Link your video here once uploaded to YouTube or Drive*
+1. **Crypto-Friendly Commerce**: As cryptocurrency adoption grows, MerchNet empowers local merchants to understand on-chain activity relevant to their area or customer base.
+2. **Localized Insights**: Get geographic transaction overviews powered by blockchain data and public APIs.
+3. **No-Code Simplicity**: Built using Google Colab and Google Sheets — even users without a coding background can run or adapt it.
+4. **Real-Time Monitoring**: MerchNet updates data with each run, ensuring fresh, relevant insights.
 
 ---
 
-## 🛠️ How To Use
+## 🔧 Features 🛠️📡📊
 
-### 🔧 Requirements
-- A **Google account**
-- Access to **Google Colab**
-- A **Google Cloud service account key** with Sheets and Drive API enabled
+- Extracts PYUSD token transfer data from Etherscan’s API
+- Geolocates sender/receiver wallet IPs (if available via external lookup)
+- Summarizes data in Google Sheets, sharable and analyzable
+- Ready for extension with maps, graphs, and dashboard tools
 
-### 🧪 Setup Instructions
+---
 
-1. **Clone the repository**  
+## 🚀 How to Use MerchNet 🧪🔍📝
+
+1. **Clone the Repo**
+
 ```bash
-git clone https://github.com/your-username/merchnet.git
+git clone https://github.com/mredidy/merchnet.git
 ```
 
-2. **Open the Colab notebook**  
-   - [Click here to run in Google Colab](#) *(Insert notebook link)*
+2. **Open and Run the Google Colab Notebook**
 
-3. **Provide your Google Sheets API credentials**  
-   - Upload your `.json` service account key file
+- Visit `MerchNet.ipynb` in your browser via Google Colab
+- Follow prompts to add your Etherscan API key and Google Sheets credentials (service account JSON)
+- Mount your Google Drive and share the destination folder with your service account
 
-4. **Run the cells step-by-step** to:
-   - Fetch transactions
-   - Process and filter data
-   - Export the data to Google Sheets (shared folder or personal)
+3. **Get Your Data**
 
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.  
-See `LICENSE` file for details.
+- The notebook will fetch data, process it, and export it into a Google Sheet inside the shared folder.
 
 ---
 
-## 📬 Contact
+## 📼 Demo Video 🎥
 
-Created by **@mister_edidy**  
-On X (Twitter): [@mister_edidy](https://twitter.com/mister_edidy)  
-Available on Discord too: *mredidy*
+Watch a short walkthrough here:
+
+---
+
+## 📜 License 📘
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🤝 Connect 🌐💬
+
+Twitter: [@mister\_edidy](https://x.com/mister_edidy)
+\
+Discord: `mredidy`
+
+---
+
+MerchNet is part of the **StackUp x PayPal** and **Google Cloud Public API Challenge**.
 
