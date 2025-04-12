@@ -73,4 +73,4 @@ Replace `ETHERSCAN_API_KEY` in the `config.py` with your API key.
 
 Execute the script to start fetching and logging PYUSD transactions:
 
-python merchnet.py
+    python merchnet.py
