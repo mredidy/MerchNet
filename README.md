@@ -37,90 +37,13 @@ MerchNet uses Etherscan and Google Cloud's Blockchain Node Engine APIs to delive
 - **Google Sheets API** (for auto-logging and reporting)
 - **Google Cloud Blockchain RPC** (planned for future integration)
 
-## 🔄 How It Works
+## 🏁 Getting Started
 
-1. **Fetch Transactions:** The app uses the Etherscan API to fetch recent PYUSD transactions.
-2. **Process Data:** Each transaction is processed to extract the sender, receiver, value, timestamp, and labels for known wallets.
-3. **Update Google Sheets:** The transaction data, along with metadata and an Etherscan link, is logged in Google Sheets for further analysis.
-
-## 🌍 Geographic Insight (Optional)
-
-Merchants can opt into viewing regional transaction flows, helping them gain a better understanding of where transactions are originating. This feature is privacy-respecting and does not track individual user identities.
-
-## 📝 Requirements
-
-Before running this project, make sure you have the following:
-
-- Python 3.x
-- Google Cloud Project and enabled APIs (Google Sheets API and Google Cloud Blockchain RPC)
-- Etherscan API Key
-- A Google Sheets file with the appropriate credentials
-
-Markdown
-
-# 🏁 Getting Started with MerchNet
-
-MerchNet is a tool designed to streamline the process of tracking and logging PYUSD transactions for local businesses, making cryptocurrency payments more accessible and understandable.
-
-## 1. Clone the Repository
-
-To get started, clone the MerchNet repository to your local machine:
+### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/mredidy/MerchNet.git](https://github.com/mredidy/MerchNet.git)
+git clone https://github.com/mredidy/MerchNet.git
 cd MerchNet
-2. Install Dependencies
-Ensure you have Python 3.x installed. Then, install the required dependencies using pip:
 
-Bash
-
-pip install -r requirements.txt
-3. Set Up Google Sheets API
-MerchNet uses the Google Sheets API to log transaction data. Follow these steps to set it up:
-
-Create a Project in Google Cloud Console:
-
-Go to the Google Cloud Console.
-Create a new project or select an existing one.   
-Enable Google Sheets API and Download Credentials:
-
-Search for "Google Sheets API" and enable it for your project.
-Create service account credentials (credentials.json) and download the file.
-Configure config.py:
-
-Open the config.py file in a text editor.
-Replace SERVICE_ACCOUNT_FILE with the path to your downloaded credentials.json file.
-4. Set Up Etherscan API Key
-MerchNet uses the Etherscan API to fetch transaction data.
-
-Obtain Etherscan API Key:
-
-Sign up for an account on Etherscan.
-Get your API key from your account settings.
-Configure config.py:
-
-Open the config.py file.
-Replace ETHERSCAN_API_KEY with your Etherscan API key.
-5. Run the Application
-To start fetching and logging PYUSD transactions, execute the following command:
-
-Bash
-
-python merchnet.py
-This script will fetch the latest transactions and log them into the Google Sheet specified in your configuration.
-
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
-🤝 Contributing
-Contributions are welcome! Feel free to open issues and submit pull requests to help improve MerchNet.   
-
-📞 Contact
-GitHub: mredidy
-Twitter: @mister_edidy
-Discord: mredidy
-Made with ❤️ for local businesses to make crypto payments easy and understandable.
-
-
-Sources and related content
-
+### **2. Install Dependencies**
+Ensure you have Python 3.x installed, then install the required dependencies:
