@@ -72,5 +72,22 @@ Replace `ETHERSCAN_API_KEY` in the `config.py` with your API key.
 ### 5. Run the Application
 
 Execute the script to start fetching and logging PYUSD transactions:
-
     python merchnet.py
+
+This will fetch the latest transactions and log them into the specified Google Sheet.
+
+📜 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+🤝 Contributing
+
+Feel free to open issues and submit pull requests to contribute to the development of MerchNet!
+
+📞 Contact
+
+GitHub: [mredidy](https://github.com/mredidy)
+Twitter: [@mister_edidy](https://twitter.com/mister_edidy)
+Discord: mredidy
+
+Made with ❤️ for local businesses to make crypto payments easy and understandable.
