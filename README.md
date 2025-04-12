@@ -86,13 +86,40 @@ This will fetch the latest transactions and log them into the specified Google S
 
 ---
 
+## 📸 Screenshots & Walkthrough
+
+### 🔁 MerchNet in Action (GIF Demo)
+![MerchNet GIF Demo](https://github.com/mredidy/MerchNet/blob/main/assets/demo.gif)
+
+### 📄 Google Sheets Format
+![MerchNet Google Sheet](https://github.com/mredidy/MerchNet/blob/main/assets/google-sheets-format.png)
+
+---
+
+## 🗺 Roadmap
+
+- [x] Real-time PYUSD transaction tracking via Etherscan
+- [x] Google Sheets logging
+- [x] Known wallet labeling
+- [ ] Geographic transaction insights
+- [ ] Integration with GCP Blockchain Node Engine
+- [ ] Frontend dashboard
+
+## 🤝 Contributing Guide
+
+We welcome contributions from the community!
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature-name`)
+3. Commit your changes (`git commit -m 'Add feature'`)
+4. Push to the branch (`git push origin feature-name`)
+5. Open a Pull Request
+
+---
+
 ## 📜 License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/mredidy/MerchNet/blob/main/LICENSE) file for more details.
-
-## 🤝 Contributing
-
-Feel free to open issues and submit pull requests to contribute to the development of MerchNet!
 
 ## 📞 Contact
 
