@@ -11,7 +11,7 @@ As crypto adoption grows, local merchants face challenges in tracking and interp
 - Insights into regional transaction flows (opt-in)
 - Automatic logging and analysis in Google Sheets
 
-## 🮩 Project Overview
+## 🧩 Project Overview
 
 MerchNet uses Etherscan and Google Cloud's Blockchain Node Engine APIs to deliver valuable insights, including:
 
