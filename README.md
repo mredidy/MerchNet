@@ -73,5 +73,5 @@ See `LICENSE` file for details.
 
 Created by **@mister_edidy**  
 On X (Twitter): [@mister_edidy](https://twitter.com/mister_edidy)  
-Available on Discord too: *Your Discord username here*
+Available on Discord too: *mredidy*
 
