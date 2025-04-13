@@ -1,14 +1,26 @@
 from flask import Flask
-# ... [rest of your imports and config]
+from google.cloud import bigquery
+from google.oauth2 import service_account
+import gspread
+from gspread_dataframe import set_with_dataframe
+from gspread_formatting import set_column_width
+import pandas as pd
 
-app = Flask(__name__)  # <- You were missing this earlier
+# ====================== CONFIG ======================
+SERVICE_ACCOUNT_FILE = 'MerchNet-Google-Sheets-API.json'
+PROJECT_ID = 'red-parity-456515-t4'
+SPREADSHEET_NAME = 'MerchNet Insights'
+# ====================================================
 
-@app.route("/")
-def home():
-    return "✅ MerchNet Updater is running."
+SCOPES = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive',
+    'https://www.googleapis.com/auth/bigquery'
+]
 
-@app.route("/cron")
-def run_updater():
+app = Flask(__name__)
+
+def update_sheet():
     try:
         credentials = service_account.Credentials.from_service_account_file(
             SERVICE_ACCOUNT_FILE,
@@ -119,5 +131,13 @@ def run_updater():
     except Exception as e:
         return f"❌ Error: {str(e)}", 500
 
+@app.route("/cron", strict_slashes=False)
+def run_cron_job():
+    try:
+        result = update_sheet()
+        return result
+    except Exception as e:
+        return f"❌ Cron error: {str(e)}", 500
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
