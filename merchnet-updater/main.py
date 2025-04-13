@@ -1,33 +1,14 @@
 from flask import Flask
-from google.cloud import bigquery
-from google.oauth2 import service_account
-import gspread
-from gspread_dataframe import set_with_dataframe
-from gspread_formatting import set_column_width
-import pandas as pd
-import requests
+# ... [rest of your imports and config]
 
-# ====================== CONFIG ======================
-SERVICE_ACCOUNT_FILE = 'MerchNet-Google-Sheets-API.json'
-PROJECT_ID = 'red-parity-456515-t4'
-SPREADSHEET_NAME = 'MerchNet Insights'
-# ====================================================
-
-SCOPES = [
-    'https://www.googleapis.com/auth/spreadsheets',
-    'https://www.googleapis.com/auth/drive',
-    'https://www.googleapis.com/auth/bigquery'
-]
-
-# Flask app
-app = Flask(__name__)
+app = Flask(__name__)  # <- You were missing this earlier
 
 @app.route("/")
 def home():
     return "✅ MerchNet Updater is running."
 
-@app.route("/update")
-def trigger_update():
+@app.route("/cron")
+def run_updater():
     try:
         credentials = service_account.Credentials.from_service_account_file(
             SERVICE_ACCOUNT_FILE,
@@ -139,4 +120,4 @@ def trigger_update():
         return f"❌ Error: {str(e)}", 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=5000)
