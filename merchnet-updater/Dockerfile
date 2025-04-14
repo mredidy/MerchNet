@@ -14,6 +14,3 @@ COPY . .
 EXPOSE 8080
 
 CMD ["python", "main.py"]
-
-# Start Gunicorn server
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "main:app"]
