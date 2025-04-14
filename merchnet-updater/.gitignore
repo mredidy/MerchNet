@@ -1,33 +1,23 @@
-# Python bytecode
+# Python
 __pycache__/
 *.py[cod]
+*.egg-info/
+.env
+*.env
 
 # Virtual environments
-.env
-.venv
-env/
 venv/
+.env/
+.venv/
 
-# Service account keys / secrets
-*.json
-!requirements*.json  # optional: allow keeping specific config files
-MerchNet-Google-Sheets-API.json
-
-# Logs
-*.log
-
-# Jupyter notebook checkpoints (if using Colab locally)
+# Jupyter Notebooks
 .ipynb_checkpoints/
 
-# OS-specific files
+# Google credentials
+*.json
+
+# macOS
 .DS_Store
-Thumbs.db
 
-# Build artifacts
-build/
-dist/
-*.egg-info/
-
-# VSCode / PyCharm / IDE settings
-.vscode/
-.idea/
+# Docker
+*.tar
