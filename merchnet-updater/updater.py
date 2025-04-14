@@ -4,25 +4,18 @@ import gspread
 from gspread_dataframe import set_with_dataframe
 from gspread_formatting import set_column_width
 import pandas as pd
-import traceback
 
-# ========== CONFIG ==========
+# ====================== CONFIG ======================
 SERVICE_ACCOUNT_FILE = 'MerchNet-Insights.json'
 PROJECT_ID = 'red-parity-456515-t4'
 SPREADSHEET_NAME = 'MerchNet Insights'
+# ====================================================
+
 SCOPES = [
     'https://www.googleapis.com/auth/spreadsheets',
     'https://www.googleapis.com/auth/drive',
     'https://www.googleapis.com/auth/bigquery'
 ]
-# ============================
-
-def get_column_letter(col_idx):
-    letters = ''
-    while col_idx >= 0:
-        letters = chr(col_idx % 26 + 65) + letters
-        col_idx = col_idx // 26 - 1
-    return letters
 
 def update_sheet():
     try:
@@ -50,8 +43,8 @@ def update_sheet():
         ORDER BY block_timestamp DESC
         LIMIT 100
         """
-        df = bq_client.query(query).to_dataframe()
 
+        df = bq_client.query(query).to_dataframe()
         df["Etherscan Link"] = df["Transaction Hash"].map(
             lambda tx: f'=HYPERLINK("https://etherscan.io/tx/{tx}", "View Transaction")'
         )
@@ -69,47 +62,48 @@ def update_sheet():
             if col != "Etherscan Link":
                 df_padded[col] = df[col].map(lambda x: f"          {x}" if pd.notnull(x) else "")
 
-        worksheet.clear()
-        worksheet.update(values=[['📊 MerchNet – Live $PYUSD Transaction Monitor']], range_name='A1')
-
-        spreadsheet.batch_update({
-            "requests": [
-                {
-                    "mergeCells": {
-                        "range": {
-                            "sheetId": worksheet_id,
-                            "startRowIndex": 0,
-                            "endRowIndex": 1,
-                            "startColumnIndex": 0,
-                            "endColumnIndex": len(df.columns)
-                        },
-                        "mergeType": "MERGE_ALL"
-                    }
-                },
-                {
-                    "repeatCell": {
-                        "range": {
-                            "sheetId": worksheet_id,
-                            "startRowIndex": 0,
-                            "endRowIndex": 1,
-                            "startColumnIndex": 0,
-                            "endColumnIndex": len(df.columns)
-                        },
-                        "cell": {
-                            "userEnteredFormat": {
-                                "horizontalAlignment": "CENTER",
-                                "textFormat": {
-                                    "bold": True,
-                                    "fontSize": 20
+        def add_header_title():
+            worksheet.update(values=[['📊 MerchNet – Live $PYUSD Transaction Monitor']], range_name='A1')
+            spreadsheet.batch_update({
+                "requests": [
+                    {
+                        "mergeCells": {
+                            "range": {
+                                "sheetId": worksheet_id,
+                                "startRowIndex": 0,
+                                "endRowIndex": 1,
+                                "startColumnIndex": 0,
+                                "endColumnIndex": len(df.columns)
+                            },
+                            "mergeType": "MERGE_ALL"
+                        }
+                    },
+                    {
+                        "repeatCell": {
+                            "range": {
+                                "sheetId": worksheet_id,
+                                "startRowIndex": 0,
+                                "endRowIndex": 1,
+                                "startColumnIndex": 0,
+                                "endColumnIndex": len(df.columns)
+                            },
+                            "cell": {
+                                "userEnteredFormat": {
+                                    "horizontalAlignment": "CENTER",
+                                    "textFormat": {
+                                        "bold": True,
+                                        "fontSize": 20
+                                    }
                                 }
-                            }
-                        },
-                        "fields": "userEnteredFormat(horizontalAlignment,textFormat)"
+                            },
+                            "fields": "userEnteredFormat(horizontalAlignment,textFormat)"
+                        }
                     }
-                }
-            ]
-        })
+                ]
+            })
 
+        worksheet.clear()
+        add_header_title()
         set_with_dataframe(worksheet, df_padded, row=2)
 
         worksheet.format("A2:H2", {
@@ -117,14 +111,18 @@ def update_sheet():
             'horizontalAlignment': 'CENTER'
         })
 
-        for i, col in enumerate(df.columns):
-            try:
-                max_len = max(len(str(col)), df_padded[col].astype(str).apply(len).max()) + 2
-                col_letter = get_column_letter(i)
-                set_column_width(worksheet, f'{col_letter}:{col_letter}', max(100, min(max_len * 7, 400)))
-            except Exception as e:
-                print(f"⚠️ Skipping column width for {col}: {e}")
+        def get_column_letter(col_idx):
+            letters = ''
+            while col_idx >= 0:
+                letters = chr(col_idx % 26 + 65) + letters
+                col_idx = col_idx // 26 - 1
+            return letters
+
+        for i, col in enumerate(df_padded.columns):
+            max_len = max(len(str(col)), df_padded[col].astype(str).apply(len).max()) + 2
+            col_letter = get_column_letter(i)
+            set_column_width(worksheet, f'{col_letter}:{col_letter}', max(100, min(max_len * 7, 400)))
 
         return "✅ MerchNet sheet updated!"
-    except Exception:
-        return f"❌ Error:\n```\n{traceback.format_exc()}\n```"
+    except Exception as e:
+        return f"❌ Error: {str(e)}", 500
