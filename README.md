@@ -21,10 +21,13 @@ The script automates the process of fetching, formatting, and presenting real-ti
 - **Error Handling**: Includes basic error handling to catch and log issues encountered during execution. ⚠️
 
 
-### 🎥 Video  
-Watch the demo video to see MerchNet in action! This video demonstrates how to fetch real-time Ethereum PYUSD transactions and automatically update the Google Sheet.
+### 🎥 Demo Video
 
-[Click here to watch MatchNet_Analytics.mp4 on GitHub](https://github.com/mredidy/MerchNet/blob/main/MerchNet_Analytics.mp4)
+Watch the demo video to see **MerchNet** in action! This video demonstrates how to fetch real-time Ethereum PYUSD transactions and automatically update the Google Sheet.
+
+[![Watch the demo video](https://img.youtube.com/vi/iOYAvJt19Rc/0.jpg)](https://youtu.be/iOYAvJt19Rc)
+
+> 🔗 [Click here to watch on YouTube](https://youtu.be/iOYAvJt19Rc)
 
 ## Requirements 📦
 Before running this script, ensure you have the following Python libraries installed:
