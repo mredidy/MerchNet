@@ -6,7 +6,7 @@ from gspread_formatting import set_column_width
 import pandas as pd
 
 # ====================== CONFIG ======================
-SERVICE_ACCOUNT_FILE = 'MerchNet-Insights.json'
+SERVICE_ACCOUNT_FILE = '/secrets/MerchNet-Insights.json'
 PROJECT_ID = 'red-parity-456515-t4'
 SPREADSHEET_NAME = 'MerchNet Insights'
 # ====================================================
