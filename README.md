@@ -1,133 +1,97 @@
 # MerchNet
 
-MerchNet is a real-time crypto payment insights tool designed for local businesses to easily track and understand on-chain PayPal USD (PYUSD) transactions. Built with simplicity and practicality in mind, MerchNet enables merchants to monitor live transactions, analyze customer and merchant behavior, and get real-time visibility into blockchain flows without needing technical expertise.
+MerchNet is a real-time crypto payment insights platform focused on tracking PayPal USD (PYUSD) transactions across Ethereum and Solana. It is designed for local businesses and developers who need visibility into stablecoin adoption and movement.
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1CKE-FuQhqF0sVVYuhINxsn8MpLw7h4Tb)
+## 🌐 Live Demo
+Check out the live dashboard here: [Google Sheets MerchNet Insights](https://docs.google.com/spreadsheets/d/1ETOF3XHbWNZGlQ8TCWmJd22f-tqJGANc)
 
 ---
 
-## 🚀 Problem Statement
+## 🚀 Features
 
-As crypto adoption grows, local merchants face challenges in tracking and interpreting blockchain transactions. MerchNet addresses this gap by offering a no-code solution that provides:
+- 🔎 Real-time monitoring of PYUSD transactions on Ethereum using GCP Blockchain RPC
+- 🧠 Uses GCP’s free access to computationally expensive methods like `debug_traceTransaction`
+- 📊 Historical analytics powered by Google BigQuery for Ethereum and Solana
+- 🌍 No-code dashboard using Google Sheets
+- 🔗 Clickable Etherscan links for easy traceability
+- 🧠 Known wallet identification & metadata tagging
+- 💵 USD-equivalent formatting for readability
 
-- Real-time monitoring of PYUSD payments  
-- Transaction metadata in a clean, human-readable format  
-- Insights into regional transaction flows (opt-in)  
-- Automatic logging and analysis in Google Sheets  
+---
 
-## 🧹 Project Overview
+## 🔧 Tech Stack
 
-MerchNet uses Etherscan and Google Cloud's Blockchain Node Engine APIs to deliver valuable insights, including:
+- **Google Cloud Blockchain Node Engine** – Real-time Ethereum mainnet RPC access
+- **BigQuery** – Historical blockchain data analysis
+- **gspread / gspread-formatting** – Export and style data in Google Sheets
+- **Google Colab** – Code execution environment
+- **Etherscan API** – Transaction metadata and links
 
-- **Real-time PYUSD transaction tracking**  
-- **Known wallet labeling** (e.g., PayPal, exchanges, smart contracts)  
-- **Etherscan links** for direct access to transaction details  
-- **Google Sheets Sync** for easy tracking and analysis of transactions  
-- **Geographic insight** into regional transaction flows (optional)  
+---
 
-## ✨ Features
+## 📦 Setup Instructions
 
-- 🦾 **Live Etherscan API Integration:** Monitor real-time PYUSD transactions on the blockchain  
-- 🔗 **Etherscan Links:** Direct access to transaction details on-chain  
-- 🧠 **Known Wallet Labeling:** Contextual labels for known addresses (e.g., PayPal, exchanges)  
-- 📊 **Google Sheets Sync:** Automatically log transaction data for easy analysis  
-- 🌍 **Geographic Insight (Opt-in):** Gain insights into transaction flows by region (optional, privacy-respecting)  
-- 🧪 **Open Source:** 100% open-source and reproducible  
-
-## 🛠 Tech Stack
-
-- **Python (Google Colab for development & runtime)**  
-- **Etherscan API** (to fetch blockchain data)  
-- **Google Sheets API** (for auto-logging and reporting)  
-- **Google Cloud Blockchain RPC** (planned for future integration)  
-
-## 🏁 Getting Started
-
-### 1. Clone the Repository
-
+### 1. Clone the Repo
 ```bash
-git clone https://github.com/mredidy/MerchNet.git
-cd MerchNet
+git clone https://github.com/mredidy/merchnet.git
+cd merchnet
 ```
 
-### 2. Install Dependencies
+### 2. Setup Credentials
+- Upload your `MerchNet-Insights.json` (GCP service account key)
+- Store in Google Secret Manager as `merchnet-service-account`
 
-Ensure you have Python 3.x installed, then install the required dependencies:
+### 3. Configure Parameters
+Set these in the script or as environment variables:
+- GCP Project ID: `red-parity-456515-t4`
+- Sheet Name: `MerchNet Insights`
+- Folder ID: `1ETOF3XHbWNZGlQ8TCWmJd22f-tqJGANc`
+- Ethereum Contract: `0x6c3ea9036406852006290770bedfcaba0e23a0e8`
 
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Set Up Google Sheets API
-
-- Create a project in Google Cloud Console.  
-- Enable Google Sheets API and download your `credentials.json` file.  
-- Replace `SERVICE_ACCOUNT_FILE` in the `config.py` with the path to your credentials file.  
-
-### 4. Set Up Etherscan API Key
-
-- Sign up for an Etherscan account and obtain your API key.  
-- Replace `ETHERSCAN_API_KEY` in the `config.py` with your API key.  
-
-### 5. Run the Application
-
-```bash
-python merchnet.py
-```
-
-This will fetch the latest transactions and log them into the specified Google Sheet.
+### 4. Run the Notebook
+- Open the Colab notebook and execute all cells.
 
 ---
 
-## 💻 Live Demo
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1CKE-FuQhqF0sVVYuhINxsn8MpLw7h4Tb)  
-📊 [Open MerchNet in Google Colab](https://colab.research.google.com/drive/1CKE-FuQhqF0sVVYuhINxsn8MpLw7h4Tb)
+## 📟️ Demo Video
+👉 [Coming Soon - Stay Tuned!]
 
 ---
 
-## 📸 Screenshots & Walkthrough
+## 🧪 Example Use Cases
 
-### 🔁 MerchNet in Action (GIF Demo)
-![MerchNet GIF Demo](https://github.com/mredidy/MerchNet/blob/main/assets/demo.gif)
-
-### 📄 Google Sheets Format
-![MerchNet Google Sheet](https://github.com/mredidy/MerchNet/blob/main/assets/google-sheets-format.png)
-
----
-
-## 🗺 Roadmap
-
-- [x] Real-time PYUSD transaction tracking via Etherscan
-- [x] Google Sheets logging
-- [x] Known wallet labeling
-- [ ] Geographic transaction insights
-- [ ] Integration with GCP Blockchain Node Engine
-- [ ] Frontend dashboard
-
-## 🤝 Contributing Guide
-
-We welcome contributions from the community!
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature-name`)
-3. Commit your changes (`git commit -m 'Add feature'`)
-4. Push to the branch (`git push origin feature-name`)
-5. Open a Pull Request
+- Small businesses accepting PYUSD payments
+- Analysts tracking stablecoin activity in DeFi
+- Developers building smart dashboards with no-code tools
 
 ---
 
 ## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/mredidy/MerchNet/blob/main/LICENSE) file for more details.
-
-## 📞 Contact
-
-- **GitHub:** [mredidy](https://github.com/mredidy)  
-- **Twitter:** [@mister_edidy](https://twitter.com/mister_edidy)  
-- **Discord:** `mredidy`  
+This project is licensed under the MIT License.
 
 ---
 
-Made with ❤️ for local businesses to make crypto payments easy and understandable.
+## 🙌 Acknowledgements
+- StackUp x Google Cloud Bounty
+- Paxos + PYUSD APIs
+- GCP Web3 RPC team
+- Ethereum & Solana public datasets
+
+---
+
+## 🧠 Author
+**mredidy**  
+GitHub: [@mredidy](https://github.com/mredidy)  
+Twitter: [@mister_edidy](https://twitter.com/mister_edidy)  
+Discord: `mredidy`
+
+---
+
+## 🔮 Roadmap
+- [x] Live Ethereum RPC connection via GCP
+- [x] Real-time PYUSD fetch & Etherscan linking
+- [ ] Integrate `trace_transaction` to trace fund flows
+- [ ] Add support for smart contract call decoding
+- [ ] Merge Solana and Ethereum into unified insights layer
+- [ ] Add mobile-friendly frontend with Glide or React
 
