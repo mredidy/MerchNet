@@ -6,9 +6,9 @@ MerchNet is a real-time analytics tool that fetches Ethereum blockchain transact
 The script automates the process of fetching, formatting, and presenting real-time Ethereum transactions in an easy-to-read Google Sheet for monitoring purposes.
 
 ## Open the Google Colab Notebook
-
-You can access the [MerchNet Colab Notebook](https://colab.research.google.com/github/mredidy/MerchNet/blob/main/MerchNet_Analytics.ipynb.ipynb) to explore and run the project interactively.
-
+<a href="https://colab.research.google.com/github/mredidy/MerchNet/blob/main/MerchNet_Analytics.ipynb" target="_blank">
+  <img src="https://img.shields.io/badge/Open-Colab-blue?style=for-the-badge&logo=googlecolab" alt="Open in Colab"/>
+</a>
 
 ## Features ⭐
 - **Real-time Data Fetching**: Fetches the latest PYUSD transaction data from BigQuery. ⏱️
