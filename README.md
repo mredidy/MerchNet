@@ -115,4 +115,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Make sure you update the paths for your `SERVICE_ACCOUNT_FILE` and `SPREADSHEET_NAME` before running the script.
 - You can also automate running the script by using services like Google Cloud Scheduler or cron jobs if you wish to keep the data up-to-date regularly. 🔄
 
+## Author ✍️
+This project is developed by **[Mister Edidy](https://twitter.com/mister_edidy)**. Feel free to reach out for any questions or suggestions!
+
+Twitter: [@mister_edidy](https://twitter.com/mister_edidy)  
+GitHub: [mredidy](https://github.com/mredidy)
+
+
 
