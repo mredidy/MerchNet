@@ -15,6 +15,15 @@ The script automates the process of fetching, formatting, and presenting real-ti
   - Formats headers to be bold and center-aligned. 🔠
 - **Error Handling**: Includes basic error handling to catch and log issues encountered during execution. ⚠️
 
+
+## Video 🎥
+Watch the demo video to see **MerchNet** in action! This video demonstrates how to fetch real-time Ethereum PYUSD transactions and automatically update the Google Sheet.
+
+[![Watch the demo video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+
+Replace `YOUR_VIDEO_ID` with the actual ID of your video on YouTube. This will embed a thumbnail that links to the video.
+
+
 ## Requirements 📦
 Before running this script, ensure you have the following Python libraries installed:
 
